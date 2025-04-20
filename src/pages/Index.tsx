@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import QuickActions from '@/components/QuickActions';
 import StudyModes from '@/components/StudyModes';
 import Features from '@/components/Features';
 import FlashcardDemo from '@/components/FlashcardDemo';
@@ -15,6 +16,7 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <QuickActions />
         <StudyModes />
         <Features />
         <CallToAction />
