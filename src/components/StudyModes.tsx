@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { BookOpen, Search, Plus, Write, Star, PlayCircle } from 'lucide-react';
+import { BookOpen, Search, Plus, Pencil, Star, PlayCircle } from 'lucide-react';
 
 const StudyModes = () => {
   const { toast } = useToast();
@@ -29,7 +29,7 @@ const StudyModes = () => {
     },
     {
       title: "Write",
-      icon: Write,
+      icon: Pencil,
       description: "Practice writing your answers",
       color: "bg-purple-500",
     },
