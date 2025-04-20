@@ -2,24 +2,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Search, Menu } from "lucide-react";
+import { Search, User } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { NavMenu } from './navigation/NavMenu';
 
 const Header = () => {
   const { toast } = useToast();
 
-  const handleCreateClick = () => {
+  const handleUpgradeClick = () => {
     toast({
-      title: "Coming soon",
-      description: "This feature will be available soon!",
+      title: "Upgrade to Plus",
+      description: "Premium features will be available soon!",
     });
   };
 
-  const handleLoginClick = () => {
+  const handleProfileClick = () => {
     toast({
-      title: "Login",
-      description: "Login functionality will be available soon!",
+      title: "Profile",
+      description: "Profile functionality will be available soon!",
     });
   };
 
@@ -41,28 +42,8 @@ const Header = () => {
             </div>
           </Link>
           
-          <div className="hidden md:flex items-center space-x-1">
-            <div className="relative group">
-              <button 
-                onClick={() => toast({ title: "Study tools", description: "Study tools will be available soon!" })}
-                className="text-quizlet-dark-gray font-medium hover:text-quizlet-blue transition-colors flex items-center px-3 py-2">
-                Study tools
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="relative group">
-              <button 
-                onClick={() => toast({ title: "Subjects", description: "Subject selection will be available soon!" })}
-                className="text-quizlet-dark-gray font-medium hover:text-quizlet-blue transition-colors flex items-center px-3 py-2">
-                Subjects
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-            </div>
+          <div className="hidden md:flex items-center">
+            <NavMenu />
           </div>
         </div>
 
@@ -72,7 +53,7 @@ const Header = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               <Input 
                 type="text" 
-                placeholder="Find it faster with a search" 
+                placeholder="Search study sets, textbook solutions, and more" 
                 className="pl-10 pr-4 py-2 rounded-md bg-gray-100 border-gray-200 w-full hover:bg-white focus:bg-white transition-colors"
               />
             </form>
@@ -80,24 +61,16 @@ const Header = () => {
           
           <div className="flex items-center gap-2">
             <Button 
-              variant="ghost" 
-              onClick={handleCreateClick}
-              className="text-quizlet-blue font-semibold hidden md:flex items-center hover:bg-quizlet-light-blue">
-              <span className="text-xl">+</span>
-              <span className="ml-1">Create</span>
+              onClick={handleUpgradeClick}
+              className="bg-quizlet-blue hover:bg-quizlet-dark-blue text-white font-medium rounded-full px-6 transition-colors hidden md:flex">
+              Upgrade
             </Button>
             
             <Button 
-              onClick={handleLoginClick}
-              className="bg-quizlet-blue hover:bg-quizlet-dark-blue text-white font-medium rounded-full px-6 transition-colors">
-              Log in
-            </Button>
-
-            <Button 
               variant="ghost"
-              className="md:hidden"
-              onClick={() => toast({ title: "Menu", description: "Mobile menu will be available soon!" })}>
-              <Menu className="h-5 w-5" />
+              onClick={handleProfileClick}
+              className="text-quizlet-dark-gray hover:text-quizlet-blue transition-colors">
+              <User className="h-5 w-5" />
             </Button>
           </div>
         </div>
