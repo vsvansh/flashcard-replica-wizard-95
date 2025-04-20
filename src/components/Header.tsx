@@ -8,58 +8,55 @@ import { Input } from "@/components/ui/input";
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="container px-4 mx-auto flex items-center justify-between h-16">
-        <div className="flex items-center gap-10">
+      <div className="container mx-auto flex items-center justify-between h-16 px-4">
+        <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center">
-            <div className="text-2xl font-bold text-quizlet-blue">quizlet</div>
+            <div className="text-3xl font-bold text-quizlet-blue">Quizlet</div>
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/home" className="text-quizlet-dark-gray font-medium hover:text-quizlet-blue transition-colors">
-              Home
-            </Link>
-            <Link to="/library" className="text-quizlet-dark-gray font-medium hover:text-quizlet-blue transition-colors">
-              Your Library
-            </Link>
+          <div className="hidden md:flex items-center space-x-1">
             <div className="relative group">
-              <button className="text-quizlet-dark-gray font-medium hover:text-quizlet-blue transition-colors flex items-center">
-                Create
+              <button className="text-quizlet-dark-gray font-medium hover:text-quizlet-blue transition-colors flex items-center px-3 py-2">
+                Study tools
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10 hidden group-hover:block">
-                <Link to="/create-set" className="block px-4 py-2 text-sm text-quizlet-dark-gray hover:bg-quizlet-light-gray">
-                  Study set
-                </Link>
-                <Link to="/create-folder" className="block px-4 py-2 text-sm text-quizlet-dark-gray hover:bg-quizlet-light-gray">
-                  Folder
-                </Link>
-                <Link to="/create-class" className="block px-4 py-2 text-sm text-quizlet-dark-gray hover:bg-quizlet-light-gray">
-                  Class
-                </Link>
-              </div>
             </div>
-          </nav>
+            
+            <div className="relative group">
+              <button className="text-quizlet-dark-gray font-medium hover:text-quizlet-blue transition-colors flex items-center px-3 py-2">
+                Subjects
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="relative hidden md:block w-64">
-            <Input 
-              type="text" 
-              placeholder="Study sets, textbooks, questions" 
-              className="pl-10 pr-4 py-2 rounded-full bg-quizlet-light-gray border-quizlet-light-gray focus:border-quizlet-blue"
-            />
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-quizlet-text-gray h-4 w-4" />
+        <div className="flex items-center gap-4 flex-1 justify-end">
+          <div className="relative hidden md:block max-w-xl w-full mx-8">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+              <Input 
+                type="text" 
+                placeholder="Find it faster with a search" 
+                className="pl-10 pr-4 py-2 rounded-md bg-gray-100 border-gray-200 w-full"
+              />
+            </div>
           </div>
           
-          <Button variant="link" className="text-quizlet-dark-gray hidden md:inline-flex">
-            Log in
-          </Button>
-          
-          <Button className="bg-quizlet-blue hover:bg-quizlet-dark-blue text-white font-medium rounded-md">
-            Sign up
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" className="text-quizlet-blue font-semibold hidden md:flex items-center">
+              <span className="text-xl">+</span>
+              <span className="ml-1">Create</span>
+            </Button>
+            
+            <Button className="bg-quizlet-blue hover:bg-quizlet-dark-blue text-white font-medium rounded-full px-6">
+              Log in
+            </Button>
+          </div>
         </div>
       </div>
     </header>
